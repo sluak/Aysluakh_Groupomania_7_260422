@@ -56,7 +56,7 @@
   >
   </Comment>
   <div class="row_form">
-    <label for="comment">Ajouter un commentaire</label>
+    <label class="title__comment" for="comment">Ajouter un commentaire</label>
     <input
       required
       type="text"
@@ -158,11 +158,12 @@ export default {
 
 .myuser__img img {
   object-fit: cover;
-  height: 35px;
-  width: 35px;
+  height: 30px;
+  width: 30px;
   border-radius: 8px;
 }
 .mypost__date {
+  margin-left: auto;
   color: grey;
   font-size: 12px;
 }
@@ -204,6 +205,11 @@ export default {
   color: black;
 }
 
+.title__comment {
+  font-size: 15px;
+  padding: 10px 0;
+}
+
 .button_comment {
   margin-top: 20px;
   border-radius: 3px;
@@ -221,8 +227,18 @@ export default {
 
 .mypost {
   display: flex;
+  column-gap: 5px;
+  padding: 10px 0;
+}
+
+.mypost div {
+  display: flex;
   align-items: center;
-  column-gap: 10px;
+}
+.post__picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .post__picture img {
   border-radius: 10px;
@@ -244,12 +260,14 @@ export default {
 }
 
 .mypost__update {
-  max-width: 20px;
+  height: 25px;
+  width: 25px;
   cursor: pointer;
 }
 
 .button__modify img {
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
 }
 </style>

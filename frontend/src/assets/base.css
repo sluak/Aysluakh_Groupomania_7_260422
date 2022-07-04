@@ -72,16 +72,21 @@ body {
 }
 img {
   max-width: 100%;
-
   object-fit: cover;
 }
+
+h1 {
+  font-size: 30px;
+}
+
 .card {
   max-width: 100%;
   width: 750px;
   background: white;
   border-radius: 16px;
-  padding: 30px;
+  padding: 20px;
 }
+
 .card__title {
   text-align: center;
   font-weight: 800;

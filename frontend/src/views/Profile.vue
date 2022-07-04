@@ -139,13 +139,15 @@ export default {
 
 .user__picture {
   padding: 10px 0;
+  display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .user__picture img {
   object-fit: cover;
-  height: 300px;
-  width: 300px;
+  height: 250px;
+  width: 250px;
   border-radius: 8px;
 }
 
@@ -166,7 +168,7 @@ export default {
   color: white;
   border-radius: 8px;
   font-weight: 800;
-  font-size: 18px;
+  font-size: 17px;
   align-content: center;
   border: none;
   width: 100%;
