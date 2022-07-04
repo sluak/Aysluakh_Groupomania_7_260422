@@ -23,29 +23,29 @@ exports.createComment = (req, res, next) => {
     .catch((error) => res.status(400).json({ message: "erreur" }));
 };
 
-// Modification d'un commentaire
-exports.modifyComment = (req, res, next) => {
-  Comment.findOne({ where: { id: req.params.id } })
-    .then((comment) => {
-      if (comment.UserId == req.token.userId || req.token.isAdmin) {
-        const commentObject = JSON.parse(req.body.comment)
-        comment.comment = commentObject.comment;
-        comment
-          .save()
-          .then((comment) => res.status(201).json({ comment }))
-          .catch((error) =>
-            res.status(400).json({ message: "erreur création bdd" })
-          );
-      } else {
-        res
-          .status(401)
-          .json({ error: "Vous n'avez pas le droit de supprimer" });
-      }
-    })
-    .catch((error) => {
-      res.status(500).json({ error: "pb base de données" });
-    });
-};
+// // Modification d'un commentaire
+// exports.modifyComment = (req, res, next) => {
+//   Comment.findOne({ where: { id: req.params.id } })
+//     .then((comment) => {
+//       if (comment.UserId == req.token.userId || req.token.isAdmin) {
+//         const commentObject = JSON.parse(req.body.comment)
+//         comment.comment = commentObject.comment;
+//         comment
+//           .save()
+//           .then((comment) => res.status(201).json({ comment }))
+//           .catch((error) =>
+//             res.status(400).json({ message: "erreur création bdd" })
+//           );
+//       } else {
+//         res
+//           .status(401)
+//           .json({ error: "Vous n'avez pas le droit de supprimer" });
+//       }
+//     })
+//     .catch((error) => {
+//       res.status(500).json({ error: "pb base de données" });
+//     });
+// };
 
 // Suppression d'un commentaire
 exports.deleteComment = (req, res, next) => {

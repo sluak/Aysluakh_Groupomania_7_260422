@@ -13,7 +13,7 @@ router.post("/", auth, multer, commentCtrl.createComment);
 // READ
 router.get("/", auth, commentCtrl.getAllComments);
 // UPDATE
-router.put("/:id", auth, commentCtrl.modifyComment);
+// router.put("/:id", auth, commentCtrl.modifyComment);
 // DELETE*/
 router.delete("/:id", auth, commentCtrl.deleteComment);
 

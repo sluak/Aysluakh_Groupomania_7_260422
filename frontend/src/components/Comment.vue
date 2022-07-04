@@ -23,30 +23,10 @@
         >
           <img alt="delete bin" src="@/assets/deletecomment.png" />
         </div>
-        <div v-if="updateMode == false">
-          <div
-            v-if="comment.UserId == this.user.userId || this.user.isAdmin"
-            @click="modifyComment()"
-            class="mycomment__update"
-          >
-            <img alt="update comment" src="../assets/updatepost.png" />
-          </div>
-        </div>
-        <div v-if="updateMode">
-          <div @click="updateComment()" class="button__modify">
-            <img alt="save comment" src="../assets/save.png" />
-          </div>
-        </div>
       </div>
     </div>
-    <div class="mycomment__comment" v-if="updateMode == false">
+    <div class="mycomment__comment">
       <span>{{ this.comment.comment }}</span>
-    </div>
-    <div class="comment__update" v-if="updateMode">
-      <textarea
-        v-on:keyup.enter="updateComment()"
-        v-model="this.comment.comment"
-      ></textarea>
     </div>
   </div>
 </template>
@@ -79,28 +59,28 @@ export default {
       });
     },
 
-    modifyComment() {
-      this.updateMode = true;
-    },
+    // modifyComment() {
+    //   this.updateMode = true;
+    // },
 
-    updateComment() {
-      let data = new FormData();
-      data.append("comment", JSON.stringify({ comment: this.comment.comment }));
-      fetch("http://localhost:3000/api/comment/" + this.comment.id, {
-        method: "PUT",
-        headers: {
-          Authorization: "bearer " + this.token,
-        },
-        body: JSON.stringify({
-          comment: this.comment,
-        }),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          window.location.reload();
-        })
-        .catch((err) => console.log(err));
-    },
+    // updateComment() {
+    //   let data = new FormData();
+    //   data.append("comment", JSON.stringify({ comment: this.comment.comment }));
+    //   fetch("http://localhost:3000/api/comment/" + this.comment.id, {
+    //     method: "PUT",
+    //     headers: {
+    //       Authorization: "bearer " + this.token,
+    //     },
+    //     body: JSON.stringify({
+    //       comment: this.comment,
+    //     }),
+    //   })
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //       window.location.reload();
+    //     })
+    //     .catch((err) => console.log(err));
+    // },
   },
 };
 </script>
