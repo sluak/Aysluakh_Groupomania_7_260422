@@ -22,13 +22,6 @@
         <img alt="save post" src="../assets/save.png" />
       </div>
     </div>
-    <!-- <div class="mypost__img">
-      <img
-        v-if="post.User.picture != null"
-        src="{{ post.User.picture }}"
-        alt="{{ post.User.username }}"
-      />
-    </div> -->
 
     <div class="myuser__img">
       <img
@@ -65,10 +58,11 @@
   <div class="row_form">
     <label for="comment">Ajouter un commentaire</label>
     <input
-      class="comment"
+      required
+      type="text"
+      id="comment"
       v-model="comment"
       placeholder="mon commentaire"
-      required
     />
     <button class="button_comment" type="submit" @click="createComment">
       Envoyer
@@ -166,6 +160,7 @@ export default {
   object-fit: cover;
   height: 35px;
   width: 35px;
+  border-radius: 8px;
 }
 .mypost__date {
   color: grey;
@@ -197,7 +192,7 @@ export default {
   border-top: 2px solid rgb(157, 20, 150);
   padding: 20px 0;
 }
-.comment {
+#comment {
   padding: 8px;
   border: none;
   border-radius: 8px;
