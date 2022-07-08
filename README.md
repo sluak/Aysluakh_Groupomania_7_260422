@@ -15,9 +15,29 @@ Version Node.js v16.15.1.
 
 Recommandé : MySQL Workbench ( Interface de gestion de votre base de données)
 
+Dans le dossier backend
+
+Il faut créer le fichier .env et compléter avec vos informations 🔑 :
+
+  HOST = 
+  
+  USER = 
+  
+  PASSWORD = 
+  
+  DATABASE = groupomania
+  
+  dialect = mysql
+  
+  #SECRET KEY POUR LE TOKEN
+  
+  TOKENSECRET = 
+  
+
 # BASE DE DONNEES
 Une base donnée est nécessaire pour le fonctionnement du site web.
-Se connecter au serveur MySQL de votre choix. Exécuter la commande : CREATE DATABASE groupomania; Compléter vos identifiants dans le fichier db.config.json du dossier Backend
+Se connecter au serveur MySQL de votre choix. Exécuter la commande : CREATE DATABASE groupomania; 
+
 
 # BACKEND
 A partir du dossier Backend dans un nouveau terminal de votre éditeur exécuter la commande:
